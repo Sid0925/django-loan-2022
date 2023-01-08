@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+ <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;600&family=Poppins:wght@200;400;500&display=swap');
+        body{
+          margin-left: 25%;
+          margin-top: 1%;
+          margin-right: 25%;
+          
+         
+        }
+        #title h1{
+          font-family: 'Nunito Sans', sans-serif;
+          font-family: 'Poppins', sans-serif;
+          font-size: 700px;
+          background-color: black;
+        }
+        #para p{
+          font-family: 'Nunito Sans', sans-serif;
+          font-family: 'Poppins', sans-serif;
+          font-size: 100px;
+          background-color: black;
+          text-align: center;
+        }
+      
+ 
+ 
+ </style>
+</head>
+
+
+
+<body>
+{% csrf_token %}
+  <h1 id="title"> Recommendation System by ML</h1><br>
+  <p id="para"> 
+    This recommendation has 80% accuracy which wil give bank employee a overview and applicant ability to repay loan according to historical data which has been trained by Machine laerninig model.
+    <br> <br>
+   
+
+   
+    {% block content %}
+    <form action="print_result" method="POST">
+
+      {% csrf_token %} 
+
+
+      <label for="cars">Applicant Gender:</label>
+
+      <select name="gender" id="cars" required class="form-control" id="inputPassword2" >
+        <option value=""> Enter Applicant Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <label for="cars">Marital status:</label>
+      <select name="Married" id="cars" required class="form-control" id="inputPassword2" >
+        <option value=""> Enter Applicant marital status </option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+
+      <label for="cars">Marital status:</label>
+      <select name="eduction" id="cars" required class="form-control" id="inputPassword2" >
+        <option value=""> Enter Applicant Eduction status </option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+
+
+
+
+
+
+
+      <label for="cars">Applicant dependants:</label>
+      <select name="depedent" id="cars" required class="form-control" id="inputPassword2" >
+        <option value=""> Enter Applicant dependants</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3+</option>
+
+      </select>
+
+      <label for="cars">Self employed:</label>
+      <select name="employed" id="cars" required class="form-control" id="inputPassword2"   >
+        <option value="">Applicant employment  </option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label for="cars">Property type:</label>
+      <select name="property" id="cars" required class="form-control" id="inputPassword2"  >
+        <option value=" "> Applicant property type</option>
+        <option value="Urban">Urban</option>
+        <option value="Semiurban">Semiurban</option>
+      </select>
+
+      <label for="cars">Loan amount:</label>
+      <input type="text" required name="loan" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Loan amount in $">
+
+      <label for="cars">Applicant income:</label>
+      <input type="text" required name="aincome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Applicant income in $">
+
+      <label for="cars">Co-applicant income:</label>
+      <input type="text" required name="cincome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Co-Applicant income in $">
+
+      <label for="cars">Loan amount term :</label>
+      <select name="term" id="cars" required class="form-control" id="inputPassword2"   >
+        <option value=""> Loan amount term for this loan in months </option>
+        <option value="36">36</option>
+        <option value="60">60</option>
+        <option value="84">84</option>
+        <option value="120">120</option>
+        <option value="240">240</option>
+        <option value="300">300</option>
+        <option value="360">360</option>
+        <option value="400">400</option>
+      </select>
+
+
+      <label for="cars">Credit history:</label>
+      <select name="credit" id="cars",required class="form-control mb-2" id="inlineFormInput"  placeholder="Enter Co-Applicant income">
+        <option value="">Does Applicant have credit history ?</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+     
+      <button type="submit" class="btn btn-outline-success">Predict Loan Eligibility</button>
+
+      </form>
+
+      {% endblock %}
+      </p>
+     
+    
+   
+
+
+ 
+
+
+ <h6 id="title"> Siddharth Chikalkar </h6><br>
+    
+</body>
+</html>
