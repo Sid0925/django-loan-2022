@@ -96,7 +96,7 @@ def print_result(request):
     prediction = np.squeeze(prediction)
 
 
-    if credit ==  1:
+    if prediction ==  1:
         return render(request,'yes.html',{'am':amount} )
     else:
         return render(request,'print.html',{'am':amount} )
