@@ -2,12 +2,10 @@ from django.shortcuts import render
  
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_protect
-import numpy as np;
 from sklearn.ensemble import RandomForestClassifier;
 from sklearn.preprocessing import StandardScaler;
 import joblib;
-import os;
-import pickle;
+
 # Create your views here.
 
 def home(request):
