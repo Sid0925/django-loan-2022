@@ -97,8 +97,8 @@ def print_result(request):
 
 
     if prediction ==  1:
-        return render(request,'yes.html',{'am':amount} )
-    else:
-        return render(request,'print.html',{'am':amount} )
+        return render(request,'yes.html',{'am':prediction} )
+    elif prediction == 0:
+        return render(request,'print.html',{'am':prediction} )
 
     
