@@ -1,1 +1,0 @@
-web: gunicorn LOAN_ELIGIBILITY.wegi --log-file -
